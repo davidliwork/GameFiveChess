@@ -3,7 +3,7 @@
     android:id="@+id/back_ground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg"
+    android:background="#FFD39B"
     android:orientation="vertical">
     <!--游戏信息-->
     <LinearLayout
