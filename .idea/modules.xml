@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-GameFiveChess.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-GameFiveChess.iml" group="GameFiveChess" />
       <module fileurl="file://$PROJECT_DIR$/GameFiveChess.iml" filepath="$PROJECT_DIR$/GameFiveChess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GameFiveChess-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GameFiveChess-app.iml" group="GameFiveChess/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

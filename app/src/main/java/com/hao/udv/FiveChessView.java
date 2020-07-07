@@ -163,8 +163,8 @@ public class FiveChessView extends View implements View.OnTouchListener {
      * 判断是否结束
      */
     private void checkGameOver() {
-        //获取落子的颜色(如果当前是白棋，则落子是黑棋)
-        int chess = isWhite ? BLACK_CHESS : WHITE_CHESS;
+        //获取落子的颜色(如果当前是白棋，则落子是白棋)
+        int chess = isWhite ? WHITE_CHESS : BLACK_CHESS;
         //棋盘是否填满
         boolean isFull = true;
         //遍历chessArray
@@ -263,8 +263,10 @@ public class FiveChessView extends View implements View.OnTouchListener {
 
     //电脑判断游戏结束
     public void checkAiGameOver() {
-        isWhite = userChess == WHITE_CHESS;
-        checkGameOver();
+        if (!isGameOver) {
+            isWhite = !isWhite;
+            checkGameOver();
+        }
     }
 
     @Override
