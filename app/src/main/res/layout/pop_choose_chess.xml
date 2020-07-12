@@ -38,7 +38,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/white_chess"
+                    android:background="@mipmap/white_chess"
                     android:contentDescription="@null" />
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/black_chess"
+                    android:background="@mipmap/black_chess"
                     android:contentDescription="@null" />
 
                 <TextView

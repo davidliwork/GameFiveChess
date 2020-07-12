@@ -1,8 +1,8 @@
 package com.hao.gamefivechess;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -95,13 +95,13 @@ public class MainActivity extends AppCompatActivity implements GameCallBack, AIC
         updateWinInfo();
         switch (winner) {
             case FiveChessView.BLACK_WIN:
-                showToast("黑棋胜利！");
+                showToast("Black victory!");
                 break;
             case FiveChessView.NO_WIN:
-                showToast("平局！");
+                showToast("Draw!");
                 break;
             case FiveChessView.WHITE_WIN:
-                showToast("白棋胜利！");
+                showToast("White chess victory!");
                 break;
         }
     }
@@ -114,11 +114,13 @@ public class MainActivity extends AppCompatActivity implements GameCallBack, AIC
 
     @Override
     public void ChangeGamer(boolean isWhite) {
-        //ai回合
-        ai.aiBout();
-        //更改当前落子
-        aiTimeIv.setVisibility(View.VISIBLE);
-        userTimeIv.setVisibility(View.GONE);
+        if (!fiveChessView.isGameOver()) {
+            //ai回合
+            ai.aiBout();
+            //更改当前落子
+            aiTimeIv.setVisibility(View.VISIBLE);
+            userTimeIv.setVisibility(View.GONE);
+        }
     }
 
     private void showToast(String str) {
@@ -172,8 +174,8 @@ public class MainActivity extends AppCompatActivity implements GameCallBack, AIC
             //玩家先手
             fiveChessView.setUserBout(true);
             //更改当前落子
-            userChessIv.setBackgroundResource(R.drawable.white_chess);
-            aiChessIv.setBackgroundResource(R.drawable.black_chess);
+            userChessIv.setBackgroundResource(R.mipmap.white_chess);
+            aiChessIv.setBackgroundResource(R.mipmap.black_chess);
             aiTimeIv.setVisibility(View.GONE);
             userTimeIv.setVisibility(View.VISIBLE);
         } else {
@@ -184,8 +186,8 @@ public class MainActivity extends AppCompatActivity implements GameCallBack, AIC
             ai.setAiChess(FiveChessView.WHITE_CHESS);
             ai.aiBout();
             //更改当前落子
-            userChessIv.setBackgroundResource(R.drawable.black_chess);
-            aiChessIv.setBackgroundResource(R.drawable.white_chess);
+            userChessIv.setBackgroundResource(R.mipmap.black_chess);
+            aiChessIv.setBackgroundResource(R.mipmap.white_chess);
             aiTimeIv.setVisibility(View.VISIBLE);
             userTimeIv.setVisibility(View.GONE);
         }

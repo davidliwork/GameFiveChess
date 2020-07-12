@@ -87,8 +87,8 @@ public class FiveChessView extends View implements View.OnTouchListener {
         //初始化chessArray
         chessArray = new int[GRID_NUMBER][GRID_NUMBER];
         //初始化棋子图片bitmap
-        whiteChess = BitmapFactory.decodeResource(context.getResources(), R.drawable.white_chess);
-        blackChess = BitmapFactory.decodeResource(context.getResources(), R.drawable.black_chess);
+        whiteChess = BitmapFactory.decodeResource(context.getResources(), R.mipmap.white_chess);
+        blackChess = BitmapFactory.decodeResource(context.getResources(), R.mipmap.black_chess);
         //初始化胜利局数
         whiteChessCount = 0;
         blackChessCount = 0;
@@ -263,10 +263,8 @@ public class FiveChessView extends View implements View.OnTouchListener {
 
     //电脑判断游戏结束
     public void checkAiGameOver() {
-        if (!isGameOver) {
-            isWhite = !isWhite;
-            checkGameOver();
-        }
+        isWhite = !isWhite;
+        checkGameOver();
     }
 
     @Override
@@ -303,7 +301,7 @@ public class FiveChessView extends View implements View.OnTouchListener {
                         }
                     }
                 } else if (isGameOver) {
-                    Toast.makeText(getContext(), "游戏已经结束，请重新开始！",
+                    Toast.makeText(getContext(), "The game is over, please start over!",
                             Toast.LENGTH_SHORT).show();
                 }
                 break;
@@ -342,4 +340,9 @@ public class FiveChessView extends View implements View.OnTouchListener {
     public int getAiScore() {
         return aiScore;
     }
+
+    public boolean isGameOver() {
+        return isGameOver;
+    }
+
 }
